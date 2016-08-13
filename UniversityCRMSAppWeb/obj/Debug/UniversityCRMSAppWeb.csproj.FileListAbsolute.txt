@@ -1,0 +1,5 @@
+C:\Users\Tofael\Documents\Visual Studio 2013\Projects\UniversityCRMSAppWeb\UniversityCRMSAppWeb\bin\UniversityCRMSAppWeb.dll.config
+C:\Users\Tofael\Documents\Visual Studio 2013\Projects\UniversityCRMSAppWeb\UniversityCRMSAppWeb\bin\UniversityCRMSAppWeb.dll
+C:\Users\Tofael\Documents\Visual Studio 2013\Projects\UniversityCRMSAppWeb\UniversityCRMSAppWeb\bin\UniversityCRMSAppWeb.pdb
+C:\Users\Tofael\Documents\Visual Studio 2013\Projects\UniversityCRMSAppWeb\UniversityCRMSAppWeb\obj\Debug\UniversityCRMSAppWeb.dll
+C:\Users\Tofael\Documents\Visual Studio 2013\Projects\UniversityCRMSAppWeb\UniversityCRMSAppWeb\obj\Debug\UniversityCRMSAppWeb.pdb
