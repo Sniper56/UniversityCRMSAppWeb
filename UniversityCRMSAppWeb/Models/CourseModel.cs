@@ -25,7 +25,20 @@ namespace UniversityCRMSApp.Models
             } 
         }
         public string CourseName { get; set; }
-        public float Credit { get; set; }
+        public float Credit
+        {
+            get
+            {
+                return Credit;
+            }
+            set
+            {
+                if (value.ToString().Length >= 0.5 || value.ToString().Length <= 5)
+                {
+                    Credit = value;
+                }
+            }
+        }
         public string Description { get; set; }
         public int DepartmentId { get; set; }
         public int SemesterId { get; set; }
