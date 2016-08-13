@@ -45,22 +45,29 @@ namespace UniversityCRMSApp.DAL
             return departments;
         }
 
-
-        public bool IsDepartmentTestExists(int DepartmentId, string DepartmentCode)
+        public DepartmentModel GetDepartmentByDeptCode(string deptCode)
         {
-            SqlConnection con = new SqlConnection(connectinDB);
-            string query = "SELECT * FROM Depatment WHERE DepartmentId=" + DepartmentId + " AND DepartmentCode=" + DepartmentCode;
-            SqlCommand command = new SqlCommand(query,con);
-            con.Open();
+            SqlConnection connection = new SqlConnection(connectinDB);
+            string query = "SELECT *FROM Depatment WHERE DepartmentCode='" + deptCode + "'";
+            SqlCommand command = new SqlCommand(query, connection);
+            DepartmentModel department = null;
+            connection.Open();
             SqlDataReader reader = command.ExecuteReader();
-            bool IsDepartmentTestExists = false;
             if (reader.HasRows)
             {
-                IsDepartmentTestExists = true;
+                while (reader.Read())
+                {
+                    department = new DepartmentModel();
+                    department.DepartmentId = int.Parse(reader["DepartmentId"].ToString());
+                    department.DepartmentName = reader["Name"].ToString();
+                    department.DepartmentCode = reader["DepartmentCode"].ToString();
+                    
+                }
+                reader.Close();
             }
-            reader.Close();
-            con.Close();
-            return IsDepartmentTestExists;
+            connection.Close();
+            return department;
         }
+       
     }
 }

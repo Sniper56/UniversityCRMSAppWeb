@@ -21,5 +21,19 @@ namespace UniversityCRMSApp.BLL
             return departmentGateway.GetDepartment();
         }
 
+        public bool IsDepartmentTestExists(DepartmentModel aDepartmentModel)
+        {
+            DepartmentModel existingDepartment =departmentGateway.GetDepartmentByDeptCode(aDepartmentModel.DepartmentCode)
+
+            if (existingDepartment != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
