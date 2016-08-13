@@ -9,7 +9,6 @@ namespace UniversityCRMSApp.DAL
     internal class DepartmentGateway
     {
          string connectinDB = WebConfigurationManager.ConnectionStrings["UniversityCRMS"].ConnectionString;
-
         public int SaveDepartment(DepartmentModel department)
         {
             int rowAffected;
@@ -44,6 +43,24 @@ namespace UniversityCRMSApp.DAL
             }
             con.Close();
             return departments;
+        }
+
+
+        public bool IsDepartmentTestExists(int DepartmentId, string DepartmentCode)
+        {
+            SqlConnection con = new SqlConnection(connectinDB);
+            string query = "SELECT * FROM Depatment WHERE DepartmentId=" + DepartmentId + " AND DepartmentCode=" + DepartmentCode;
+            SqlCommand command = new SqlCommand(query,con);
+            con.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            bool IsDepartmentTestExists = false;
+            if (reader.HasRows)
+            {
+                IsDepartmentTestExists = true;
+            }
+            reader.Close();
+            con.Close();
+            return IsDepartmentTestExists;
         }
     }
 }
