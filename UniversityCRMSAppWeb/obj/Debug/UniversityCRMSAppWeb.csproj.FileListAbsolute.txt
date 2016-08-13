@@ -8,3 +8,4 @@ C:\Users\Javedul Ferdous\Desktop\UniversityCRMSAppWeb\UniversityCRMSAppWeb\bin\U
 C:\Users\Javedul Ferdous\Desktop\UniversityCRMSAppWeb\UniversityCRMSAppWeb\bin\UniversityCRMSAppWeb.pdb
 C:\Users\Javedul Ferdous\Desktop\UniversityCRMSAppWeb\UniversityCRMSAppWeb\obj\Debug\UniversityCRMSAppWeb.dll
 C:\Users\Javedul Ferdous\Desktop\UniversityCRMSAppWeb\UniversityCRMSAppWeb\obj\Debug\UniversityCRMSAppWeb.pdb
+C:\Users\Javedul Ferdous\Desktop\UniversityCRMSAppWeb\UniversityCRMSAppWeb\obj\Debug\UniversityCRMSAppWeb.csprojResolveAssemblyReference.cache

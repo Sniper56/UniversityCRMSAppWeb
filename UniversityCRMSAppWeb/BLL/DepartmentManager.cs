@@ -23,7 +23,7 @@ namespace UniversityCRMSApp.BLL
 
         public bool IsDepartmentTestExists(DepartmentModel aDepartmentModel)
         {
-            DepartmentModel existingDepartment =departmentGateway.GetDepartmentByDeptCode(aDepartmentModel.DepartmentCode)
+            DepartmentModel existingDepartment =departmentGateway.GetDepartmentByDeptCode(aDepartmentModel.DepartmentCode);
 
             if (existingDepartment != null)
             {
