@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.Hosting;
 
 namespace UniversityCRMSApp.Models
 {
@@ -29,7 +30,24 @@ namespace UniversityCRMSApp.Models
                 }
             }
         }
-        public int ContactNo { get; set; }
+
+        public string ContactNo
+        {
+            get
+            {
+                return ContactNo;        
+            }
+            set
+            {
+                string pattern = null;
+                //pattern = @"^([01]|\+88)?\d{11}";
+                pattern = @"^(?:\+?88)?01\d{8}$";
+                if (Regex.IsMatch(value, pattern))
+                {
+                    ContactNo = value;
+                }
+            }
+        }
         public int DesignationId { get; set; }
         public int DepartmentId { get; set; }
         public int CreditToBeTaken { get; set; }
