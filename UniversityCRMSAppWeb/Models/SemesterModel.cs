@@ -9,6 +9,5 @@ namespace UniversityCRMSAppWeb.Models
     {
         public int Id { get; set; }
         public string Semester { get; set; }
-
     }
 }
