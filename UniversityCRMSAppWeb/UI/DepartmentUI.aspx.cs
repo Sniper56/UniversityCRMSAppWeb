@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -20,21 +21,27 @@ namespace UniversityCRMSAppWeb.UI
 
         protected void saveButton_Click(object sender, EventArgs e)
         {
+            
             DepartmentModel department=new DepartmentModel();
             department.DepartmentCode = codeTextBox.Text;
             department.DepartmentName = nameTextBox.Text;
 
-            if (departmentManager.IsDepartmentTestExists(department) == true)
+            if(department.DepartmentCode.Length<2 || department.DepartmentCode.Length>7)
             {
-                Response.Write("Department Code alrady exist!");
+                Response.Write("Department code must be 2 to 7 charecter");
             }
             else
             {
-                departmentManager.SaveDepartment(department);
-                Response.Write("Department save successful.");
-            }
-
-          
+                if (departmentManager.IsDepartmentTestExists(department) == true)
+                {
+                    Response.Write("Department Code alrady exist!");
+                }
+                else
+                {
+                    departmentManager.SaveDepartment(department);
+                    Response.Write("Department save successful.");
+                }
+            }      
             ClearAll();
         }
 
