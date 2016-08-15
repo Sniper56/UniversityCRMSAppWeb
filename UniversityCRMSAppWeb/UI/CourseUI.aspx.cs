@@ -15,10 +15,14 @@ namespace UniversityCRMSAppWeb.UI
     {
         CourseManager   courseManager=new CourseManager();
         protected void Page_Load(object sender, EventArgs e)
+        
         {
-            LoadDepartmentDropdownList();
-            LoadSemesterDropdownList();
-
+            if (!IsPostBack)
+            {
+                LoadDepartmentDropdownList();
+                LoadSemesterDropdownList();
+            }
+            ClearAll();
         }
 
         private void LoadDepartmentDropdownList()
@@ -39,6 +43,39 @@ namespace UniversityCRMSAppWeb.UI
             semesterDropDownList.DataValueField = "Id";
             semesterDropDownList.DataBind();
             semesterDropDownList.Items.Insert(0,"----Select----");
+        }
+
+        protected void saveButton_Click(object sender, EventArgs e)
+        {
+            CourseModel course=new CourseModel();
+            course.CourseCode = codeTextBox.Text;
+            course.CourseName = nameTextBox.Text;
+            course.Credit =float.Parse( creditTextBox.Text);
+            course.Description = DescriptionTextBox.Text;
+            course.DepartmentId = departmentDropDownList.SelectedIndex;
+            course.SemesterId = semesterDropDownList.SelectedIndex;
+
+            int rowAffected;
+                rowAffected= courseManager.SaveCourse(course);
+            if (rowAffected > 0)
+            {
+                Response.Write("Course Save succcessful.");
+
+            }
+            else
+            {
+                Response.Write("Course save failed!");
+            }
+        }
+
+        private void ClearAll()
+        {
+            codeTextBox.Text = string.Empty;
+            nameTextBox.Text = string.Empty;
+            creditTextBox.Text = string.Empty;
+            DescriptionTextBox.Text = string.Empty;
+            departmentDropDownList.SelectedIndex = 0;
+            semesterDropDownList.SelectedIndex = 0;
         }
     }
 }
