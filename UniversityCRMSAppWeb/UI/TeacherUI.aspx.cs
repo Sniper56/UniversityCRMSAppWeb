@@ -20,6 +20,7 @@ namespace UniversityCRMSAppWeb.UI
                 LoadDepartmentDropdownList();
                 LoadDesignationDropdownList();
             }
+            ClearAll();
         }
         private void LoadDepartmentDropdownList()
         {
@@ -40,7 +41,15 @@ namespace UniversityCRMSAppWeb.UI
             designationDropDownList.Items.Insert(0, "----Select----");
         }
 
-
+        private void ClearAll()
+        {
+            nameTextBox.Text = string.Empty;
+            addressTextBox.Text = string.Empty;
+            emailTextBox.Text = string.Empty;
+            contactNoTextBox.Text = string.Empty;
+            designationDropDownList.SelectedIndex = 0;
+            departmentrDropDownList.SelectedIndex = 0;
+        }
 
     }
 }
