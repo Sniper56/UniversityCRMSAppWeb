@@ -35,5 +35,10 @@ namespace UniversityCRMSApp.BLL
             }
         }
 
+        public List<DepartmentModel> GetAllDepartment()
+        {
+            return departmentGateway.GetAllDepartment();
+        }
+
     }
 }

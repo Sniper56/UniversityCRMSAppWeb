@@ -68,6 +68,28 @@ namespace UniversityCRMSApp.DAL
             connection.Close();
             return department;
         }
+        public List<DepartmentModel> GetAllDepartment()
+        {
+            SqlConnection con = new SqlConnection(connectinDB);
+            string query = "SELECT DepartmentId,Name FROM Depatment";
+            SqlCommand cmd = new SqlCommand(query, con);
+            List<DepartmentModel> departmentsList = new List<DepartmentModel>();
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    DepartmentModel department = new DepartmentModel();
+                    department.DepartmentId = int.Parse(reader["DepartmentId"].ToString());
+                    department.DepartmentName = reader["Name"].ToString();
+                    departmentsList.Add(department);
+                }
+                reader.Close();
+            }
+            con.Close();
+            return departmentsList;
+        }
        
     }
 }

@@ -1,6 +1,8 @@
-﻿using System.Data.SqlClient;
+﻿using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Web.Configuration;
 using UniversityCRMSApp.Models;
+using UniversityCRMSAppWeb.Models;
 
 namespace UniversityCRMSApp.DAL
 {
@@ -18,6 +20,50 @@ namespace UniversityCRMSApp.DAL
             rowAffected = cmd.ExecuteNonQuery();
             con.Close();
             return rowAffected;
+        }
+        public List<DepartmentModel> GetAllDepartment()
+        {
+            SqlConnection con = new SqlConnection(connectinDB);
+            string query = "SELECT DepartmentId,Name FROM Depatment";
+            SqlCommand cmd = new SqlCommand(query, con);
+            List<DepartmentModel> departmentsList = new List<DepartmentModel>();
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    DepartmentModel department = new DepartmentModel();
+                    department.DepartmentId = int.Parse(reader["DepartmentId"].ToString());
+                    department.DepartmentName = reader["Name"].ToString();
+                    departmentsList.Add(department);
+                }
+                reader.Close();
+            }
+            con.Close();
+            return departmentsList;
+        }
+        public List<SemesterModel> GetAllSemester()
+        {
+            SqlConnection con = new SqlConnection(connectinDB);
+            string query = "SELECT DepartmentId,Name FROM Depatment";
+            SqlCommand cmd = new SqlCommand(query, con);
+            List<SemesterModel> semesterlList = new List<SemesterModel>();
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    SemesterModel semester = new SemesterModel();
+                    semester.Id = int.Parse(reader["DepartmentId"].ToString());
+                    semester.Semester = reader["Name"].ToString();
+                    semesterlList.Add(semester);
+                }
+                reader.Close();
+            }
+            con.Close();
+            return semesterlList;
         }
     }
 }

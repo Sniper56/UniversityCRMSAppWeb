@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="UI\DepartmentUI.aspx" />
+    <Content Include="UI\Index.aspx" />
     <Content Include="UI\ShowDepartmentUI.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -80,6 +81,13 @@
     </Compile>
     <Compile Include="UI\DepartmentUI.aspx.designer.cs">
       <DependentUpon>DepartmentUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\ShowDepartmentUI.aspx.cs">
       <DependentUpon>ShowDepartmentUI.aspx</DependentUpon>
