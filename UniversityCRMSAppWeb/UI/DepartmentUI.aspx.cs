@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using UniversityCRMSApp.BLL;
 using UniversityCRMSApp.Models;
 
@@ -13,20 +6,20 @@ namespace UniversityCRMSAppWeb.UI
 {
     public partial class DepartmentUI : System.Web.UI.Page
     {
-        DepartmentManager departmentManager=new DepartmentManager();
+        DepartmentManager departmentManager = new DepartmentManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         protected void saveButton_Click(object sender, EventArgs e)
         {
-            
-            DepartmentModel department=new DepartmentModel();
+
+            DepartmentModel department = new DepartmentModel();
             department.DepartmentCode = codeTextBox.Text;
             department.DepartmentName = nameTextBox.Text;
 
-            if(department.DepartmentCode.Length<2 || department.DepartmentCode.Length>7)
+            if (department.DepartmentCode.Length < 2 || department.DepartmentCode.Length > 7)
             {
                 Response.Write("Department code must be 2 to 7 charecter");
             }
@@ -41,7 +34,7 @@ namespace UniversityCRMSAppWeb.UI
                     departmentManager.SaveDepartment(department);
                     Response.Write("Department save successful.");
                 }
-            }      
+            }
             ClearAll();
         }
 
