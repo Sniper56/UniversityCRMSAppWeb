@@ -10,7 +10,8 @@
     <form id="form1" runat="server">
     <div>
         <a href="DepartmentUI.aspx">DepartmentUI.aspx</a><br/>
-        <a href="ShowDepartmentUI.aspx">ShowDepartmentUI.aspx</a>
+        <a href="ShowDepartmentUI.aspx">ShowDepartmentUI.aspx</a><br/>
+        <a href="CourseUI.aspx">CourseUI.aspx</a>
     </div>
     </form>
 </body>

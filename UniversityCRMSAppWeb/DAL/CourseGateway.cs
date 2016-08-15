@@ -46,7 +46,7 @@ namespace UniversityCRMSApp.DAL
         public List<SemesterModel> GetAllSemester()
         {
             SqlConnection con = new SqlConnection(connectinDB);
-            string query = "SELECT DepartmentId,Name FROM Depatment";
+            string query = "SELECT SemesterId,SemisterName FROM Semester";
             SqlCommand cmd = new SqlCommand(query, con);
             List<SemesterModel> semesterlList = new List<SemesterModel>();
             con.Open();
@@ -56,8 +56,8 @@ namespace UniversityCRMSApp.DAL
                 while (reader.Read())
                 {
                     SemesterModel semester = new SemesterModel();
-                    semester.Id = int.Parse(reader["DepartmentId"].ToString());
-                    semester.Semester = reader["Name"].ToString();
+                    semester.Id = int.Parse(reader["SemesterId"].ToString());
+                    semester.Semester = reader["SemisterName"].ToString();
                     semesterlList.Add(semester);
                 }
                 reader.Close();

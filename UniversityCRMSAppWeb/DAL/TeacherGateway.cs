@@ -48,7 +48,7 @@ namespace UniversityCRMSApp.DAL
             return departmentsList;
         }
 
-        public List<DesignationModel> GetAllDesignation()
+        public List<DesignationModel> GetTeacherDesignation()
         {
             SqlConnection con = new SqlConnection(connectinDB);
             string query = "SELECT DesignationId,DesignationName FROM Teacher.Designaion";
