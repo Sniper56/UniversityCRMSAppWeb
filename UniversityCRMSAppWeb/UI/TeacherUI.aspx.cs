@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UniversityCRMSApp.BLL;
 using UniversityCRMSApp.Models;
+using UniversityCRMSAppWeb.Models;
 
 namespace UniversityCRMSAppWeb.UI
 {
@@ -17,6 +18,7 @@ namespace UniversityCRMSAppWeb.UI
             if (!IsPostBack)
             {
                 LoadDepartmentDropdownList();
+                LoadDesignationDropdownList();
             }
         }
         private void LoadDepartmentDropdownList()
@@ -28,6 +30,16 @@ namespace UniversityCRMSAppWeb.UI
             departmentrDropDownList.DataBind();
             departmentrDropDownList.Items.Insert(0, "----Select----");
         }
+        private void LoadDesignationDropdownList()
+        {
+            List<DesignationModel> designationlList = teacherManager.GetTeacherDesignation();
+            designationDropDownList.DataSource = designationlList;
+            designationDropDownList.DataTextField = "Designation";
+            designationDropDownList.DataValueField = "Id";
+            designationDropDownList.DataBind();
+            designationDropDownList.Items.Insert(0, "----Select----");
+        }
+
 
 
     }

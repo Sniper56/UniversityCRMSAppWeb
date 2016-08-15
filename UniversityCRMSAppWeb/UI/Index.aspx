@@ -11,8 +11,9 @@
     <div>
         <a href="DepartmentUI.aspx">DepartmentUI.aspx</a><br/>
         <a href="ShowDepartmentUI.aspx">ShowDepartmentUI.aspx</a><br/>
-        <a href="CourseUI.aspx">CourseUI.aspx</a>
+        <a href="CourseUI.aspx">CourseUI.aspx</a><br/>
+        <a href="TeacherUI.aspx">TeacherUI.aspx</a>
     </div>
     </form>
-</body>
+<%--</body>--%>
 </html>

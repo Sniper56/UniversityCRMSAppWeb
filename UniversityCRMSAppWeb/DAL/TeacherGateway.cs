@@ -51,7 +51,7 @@ namespace UniversityCRMSApp.DAL
         public List<DesignationModel> GetTeacherDesignation()
         {
             SqlConnection con = new SqlConnection(connectinDB);
-            string query = "SELECT DesignationId,DesignationName FROM Teacher.Designaion";
+            string query = "SELECT DesignationId,DesignationName FROM [Teacher.Designaion]";
             SqlCommand cmd = new SqlCommand(query, con);
             List<DesignationModel> designationlList= new List<DesignationModel>();
             con.Open();
@@ -62,7 +62,7 @@ namespace UniversityCRMSApp.DAL
                 {
                     DesignationModel designation = new DesignationModel();
                     designation.Id = int.Parse(reader["DesignationId"].ToString());
-                    designation.Desognation = reader["DesignationName"].ToString();
+                    designation.Designation = reader["DesignationName"].ToString();
                     designationlList.Add(designation);
                 }
                 reader.Close();
