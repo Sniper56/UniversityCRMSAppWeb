@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UI\ClassScheduleandRoomAllocation.aspx" />
     <Content Include="UI\CourseUI.aspx" />
     <Content Include="UI\DepartmentUI.aspx" />
     <Content Include="UI\Index.aspx" />
@@ -79,6 +80,13 @@
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\TeacherModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\ClassScheduleandRoomAllocation.aspx.cs">
+      <DependentUpon>ClassScheduleandRoomAllocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ClassScheduleandRoomAllocation.aspx.designer.cs">
+      <DependentUpon>ClassScheduleandRoomAllocation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\CourseUI.aspx.cs">
       <DependentUpon>CourseUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

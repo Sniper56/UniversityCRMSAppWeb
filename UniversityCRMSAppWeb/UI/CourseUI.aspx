@@ -17,24 +17,24 @@
                         <asp:TextBox ID="codeTextBox" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td><asp:Label ID="Label2" runat="server" Text="Name"></asp:Label></td></td>
+                    <td><asp:Label ID="Label2" runat="server" Text="Name"></asp:Label></td>
                     <td><asp:TextBox ID="nameTextBox" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td><asp:Label ID="Label3" runat="server" Text="Credit"></asp:Label></td></td>
+                    <td><asp:Label ID="Label3" runat="server" Text="Credit"></asp:Label></td>
                     <td><asp:TextBox ID="creditTextBox" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td><asp:Label ID="Label4" runat="server" Text="Description"></asp:Label></td></td>
+                    <td><asp:Label ID="Label4" runat="server" Text="Description"></asp:Label></td>
                     <td><asp:TextBox ID="DescriptionTextBox" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td><asp:Label ID="Label5" runat="server" Text="Department"></asp:Label></td></td>
+                    <td><asp:Label ID="Label5" runat="server" Text="Department"></asp:Label></td>
                     <td>
                         <asp:DropDownList ID="departmentDropDownList" runat="server"></asp:DropDownList></td>
                 </tr>
                 <tr>
-                    <td><asp:Label ID="Label6" runat="server" Text="Semester"></asp:Label></td></td>
+                    <td><asp:Label ID="Label6" runat="server" Text="Semester"></asp:Label></td>
                     <td><asp:DropDownList ID="semesterDropDownList" runat="server"></asp:DropDownList></td>
 
                 </tr>

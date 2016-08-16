@@ -11,17 +11,14 @@ namespace UniversityCRMSAppWeb.UI
         {
 
         }
-
         protected void saveButton_Click(object sender, EventArgs e)
         {
-
             DepartmentModel department = new DepartmentModel();
             department.DepartmentCode = codeTextBox.Text;
             department.DepartmentName = nameTextBox.Text;
-
             if (department.DepartmentCode.Length < 2 || department.DepartmentCode.Length > 7)
             {
-                Response.Write("Department code must be 2 to 7 charecter");
+                Response.Write("Department code must be 2 to 7 charecter long.");
             }
             else
             {
@@ -37,7 +34,6 @@ namespace UniversityCRMSAppWeb.UI
             }
             ClearAll();
         }
-
         private void ClearAll()
         {
             codeTextBox.Text = string.Empty;
