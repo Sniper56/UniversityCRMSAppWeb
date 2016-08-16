@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 using UniversityCRMSApp.Models;
@@ -64,6 +65,32 @@ namespace UniversityCRMSApp.DAL
             }
             con.Close();
             return semesterlList;
+        }
+        public CourseModel GetCourseByCodeAndName(string courseCode, string courseName)
+        {
+            SqlConnection connection = new SqlConnection(connectinDB);
+            string query = "SELECT * FROM Course WHERE CourseCode='" + courseCode + "' and '" + courseName + "'";
+            SqlCommand command = new SqlCommand(query, connection);
+            CourseModel courses = null;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    courses = new CourseModel();
+                    courses.DepartmentId = int.Parse(reader["DepartmentId"].ToString());
+                    courses.SemesterId = int.Parse(reader["SemesterId"].ToString());
+                    courses.CourseCode = reader["CourseCode"].ToString();
+                    courses.CourseName = reader["CourseName"].ToString();
+                    courses.Credit =Convert.ToInt32( reader["Credit"].ToString());
+                    courses.Description = reader["Description"].ToString();
+
+                }
+                reader.Close();
+            }
+            connection.Close();
+            return courses;
         }
     }
 }

@@ -51,15 +51,30 @@ namespace UniversityCRMSAppWeb.UI
             course.SemesterId = semesterDropDownList.SelectedIndex;
 
             int rowAffected;
-                rowAffected= courseManager.SaveCourse(course);
-            if (rowAffected > 0)
+            if (course.CourseCode.Length < 5)
             {
-                Response.Write("Course Save succcessful.");
-
+                Response.Write("Code length must be at least 5 charecter long.");
             }
             else
             {
-                Response.Write("Course save failed!");
+                if (courseManager.IsCourseCodeAndNameExist(course.CourseCode, course.CourseName) == true)
+                {
+                    Response.Write("Course code and name alrady exist.");
+                }
+                else
+                {
+                    rowAffected = courseManager.SaveCourse(course);
+                    if (rowAffected > 0)
+                    {
+                        Response.Write("Course Save succcessful.");
+
+                    }
+                    else
+                    {
+                        Response.Write("Course save failed!");
+                    } 
+                }
+                ClearAll();
             }
         }
 

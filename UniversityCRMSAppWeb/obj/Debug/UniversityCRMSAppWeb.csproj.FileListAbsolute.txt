@@ -12,6 +12,6 @@ C:\Users\Javedul Ferdous\Desktop\UniversityCRMSAppWeb\UniversityCRMSAppWeb\obj\D
 C:\Users\Tofael\Documents\GitHub\UniversityCRMSAppWeb\UniversityCRMSAppWeb\bin\UniversityCRMSAppWeb.dll.config
 C:\Users\Tofael\Documents\GitHub\UniversityCRMSAppWeb\UniversityCRMSAppWeb\bin\UniversityCRMSAppWeb.dll
 C:\Users\Tofael\Documents\GitHub\UniversityCRMSAppWeb\UniversityCRMSAppWeb\bin\UniversityCRMSAppWeb.pdb
-C:\Users\Tofael\Documents\GitHub\UniversityCRMSAppWeb\UniversityCRMSAppWeb\obj\Debug\UniversityCRMSAppWeb.csprojResolveAssemblyReference.cache
 C:\Users\Tofael\Documents\GitHub\UniversityCRMSAppWeb\UniversityCRMSAppWeb\obj\Debug\UniversityCRMSAppWeb.dll
 C:\Users\Tofael\Documents\GitHub\UniversityCRMSAppWeb\UniversityCRMSAppWeb\obj\Debug\UniversityCRMSAppWeb.pdb
+C:\Users\Tofael\Documents\GitHub\UniversityCRMSAppWeb\UniversityCRMSAppWeb\obj\Debug\UniversityCRMSAppWeb.csprojResolveAssemblyReference.cache

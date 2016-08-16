@@ -26,6 +26,18 @@ namespace UniversityCRMSApp.BLL
             return courseGateway.GetAllSemester();
         }
 
+        public bool IsCourseCodeAndNameExist(string courseCode, string courseName)
+        {
+            CourseModel isCodeAndNameExist= courseGateway.GetCourseByCodeAndName(courseCode, courseName);
+            if (isCodeAndNameExist != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 }
